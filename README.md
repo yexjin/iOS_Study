@@ -7,6 +7,7 @@
 ## 🗓 Time List
 | Date  | Project / Study | About |
 | --- | --- | --- |
-| May 12, 2022 | Symbol Roller | View Controller, Auto Layout, Stack View |
-| May 17, 2022 | Simple Weather | Stack View in Stack View |
-| May 21, 2022 | Stock Rank | Collection View |
+| May 12, 2022 | [Symbol Roller](https://yexjinitlog.tistory.com/93) | View Controller, Auto Layout, Stack View |
+| May 17, 2022 | [Simple Weather](https://yexjinitlog.tistory.com/94) | Stack View in Stack View |
+| May 21, 2022 | [Stock Rank](https://yexjinitlog.tistory.com/96) | Collection View |
+| May 23, 2022 | [Chat List](https://yexjinitlog.tistory.com/97) | Collection View |
