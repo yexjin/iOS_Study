@@ -12,3 +12,4 @@
 | May 21, 2022 | [Stock Rank](https://yexjinitlog.tistory.com/96) | Collection View |
 | May 23, 2022 | [Chat List](https://yexjinitlog.tistory.com/97) | Collection View |
 | May 28, 2022 | [Apple Framework List](https://yexjinitlog.tistory.com/97) | Collection View, Navigation |
+| May 29, 2022 | [Insta Search View](https://yexjinitlog.tistory.com/102) | UITabbarController, UISearchController |
