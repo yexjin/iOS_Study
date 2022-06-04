@@ -15,78 +15,58 @@ class FrameworkListViewController: UIViewController {
     // 데이터를 일단 가져오기
     let list: [AppleFramework] = AppleFramework.list
     
-    // Data, Presentation, Layout
+    var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
+    
+    typealias Item = AppleFramework
+    
+    enum Section {
+        case main
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // DataSource는 ViewController 자신에게 물어보기(self)
-        collectionView.dataSource = self
-        
-        // delegate를 통해서 Layout도 잘 위임
         collectionView.delegate = self
-        
-        // 네비게이션 바 title 바꾸기
         navigationController?.navigationBar.topItem?.title = "🎀 Apple Frameworks"
         
-        // collectionView의 estimate size를 none으로 설정하는 코드
-        if let flowlayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            flowlayout.estimatedItemSize = .zero    // .zero 는 none으로 설정해준것과 같다.
-        }
+    // Data, Presentation, Layout
+//      (1) presentation -> diffable datasource
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FrameworkCell", for: indexPath) as? FrameworkCell else {
+                 return nil
+            }
+            cell.configure(item)    // item이 AppleFramework와 같음
+            return cell
+        })
         
-        // contentInset = Content의 안쪽 여백 주기
-        collectionView.contentInset = UIEdgeInsets(top: 30, left: 16, bottom: 0, right: 16)
+//      (2) data -> snapshot
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(list, toSection: .main)
+        // dataSource에 Snapshot을 적용시키기
+        dataSource.apply(snapshot)
+        
+//      (3) layout -> compositional layout
+        collectionView.collectionViewLayout = layout()
     }
     
-}
-
-// dataSource 프로토콜 준수 과정
-extension FrameworkListViewController:
-    UICollectionViewDataSource {
-    
-    // 몇개나 cell에 보여줄 건지?
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.count
+    private func layout() -> UICollectionViewCompositionalLayout {
+        // item, group, section, layout 만들기
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalHeight(1))    // item의 width는 group너비의 1/3, height는 group높이과 같음
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.33))    // group의 width는 section너비, height는 section너비의 1/3
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)  // item을 3등분으로 균일하게 쓰겠다!
+        
+        let section = NSCollectionLayoutSection(group: group)
+        // section 좌우에 안쪽패딩주기
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FrameworkCell", for: indexPath) as? FrameworkCell else{
-            return UICollectionViewCell()
-        }
-        
-        let framework = list[indexPath.item] // 몇번째 아이템을 가져올건지는 index.item을 통해 가져올 수 있다.
-        cell.configure(framework)
-        return cell
-    }
-}
-
-// delegate 프로토콜 준수 과정
-extension FrameworkListViewController: UICollectionViewDelegateFlowLayout {
     
-    // collectionView size를 automatic -> none 으로 바꿔주기
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        // item들간의 간격
-        let interItemSpacing: CGFloat = 10
-        
-        // 좌우로 들어가는 16짜리 padding
-        let padding: CGFloat = 16
-        
-        let width = (collectionView.bounds.width - interItemSpacing * 2 - padding * 2) / 3
-        let height = width * 1.5
-        return CGSize(width: width, height: height)
-    }
-    
-    // cell 사이의 간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    // 윗줄과 아랫줄 (line spacing) 간의 간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
 }
 
 // item이 선택되었을 때 효과 넣기
@@ -98,4 +78,5 @@ extension FrameworkListViewController: UICollectionViewDelegate{
         print(">>>> selected : \(framework.name)")
     }
 }
+
 
