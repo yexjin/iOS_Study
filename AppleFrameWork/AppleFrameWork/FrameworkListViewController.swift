@@ -26,7 +26,7 @@ class FrameworkListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.delegate = self
+        collectionView.delegate = self  // collectionView의 위임을 나에게 하겠다. 내가 담당하겠다!
         navigationController?.navigationBar.topItem?.title = "🎀 Apple Frameworks"
         
     // Data, Presentation, Layout
@@ -75,7 +75,13 @@ extension FrameworkListViewController: UICollectionViewDelegate{
     // item이 선택되었을 때 호출되는 method
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let framework = list[indexPath.item] // 몇번째 item인지?
-        print(">>>> selected : \(framework.name)")
+        
+        // FrameworkDetailViewController 띄우기
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController  // FrameworkDetailViewController로 강제 캐스팅
+        vc.framework = framework    // FrameworkDetailView가 떴을 때, 이미 업데이트가 완료된 상태로 뜨게 됨.
+//        vc.modalPresentationStyle = .fullScreen // fullScreen으로 모달이 뜨게 -> 제스쳐로 모달을 닫을 수 없음
+        present(vc, animated: true) // present 메소드로 띄워주기
     }
 }
 
