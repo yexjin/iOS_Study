@@ -4,7 +4,7 @@
 
 <br />
 
-## 🗓 Time List
+## 🗓 Study List
 | Date  | Project / Study | About |
 | --- | --- | --- |
 | May 12, 2022 | [Symbol Roller](https://yexjinitlog.tistory.com/93) | View Controller, Auto Layout, Stack View |
