@@ -50,6 +50,9 @@ class FocusViewController: UIViewController {
         // (3) laout -> Compositional layout
         collectionView.collectionViewLayout = layout()
         
+        // 화면 넘어감을 위한 delegate 설정
+        collectionView.delegate = self
+        
         updateButtonTitle()
 
     }
@@ -90,4 +93,21 @@ class FocusViewController: UIViewController {
         updateButtonTitle()
     }
     
+}
+
+// For delegate
+extension FocusViewController: UICollectionViewDelegate {
+    
+    // collectionView에서 indexPath에 있는 item을 선택을 했을 때 실행되는 함수
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        
+        // 상세뷰로 넘어가는 storyboard 접근
+        let storyboard = UIStoryboard(name: "QuickFocus", bundle: nil)
+        // viewController도 가져와
+        let vc = storyboard.instantiateViewController(withIdentifier: "QuickFocusListViewController") as! QuickFocusListViewController
+        
+        vc.title = item.title   // 상세 화면으로 넘어갔을 때, title 나오게!
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
