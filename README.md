@@ -19,3 +19,14 @@
 | June 28, 2022 | [Spotify Paywall](https://yexjinitlog.tistory.com/113) | Diffable Datasource, Snapshot, Compositional Layout, Paging Control, Collection View |
 | June 29, 2022 | [Apple Framework List + MODAL](https://yexjinitlog.tistory.com/115) | Modal, Another Storyboard & UIViewController, SafariService |
 | June 30, 2022 | [Head Space Focus + NAVIGATION](https://yexjinitlog.tistory.com/116) | Navigation, UICollectionReusableView, Multiple sections in Compositional layout |
+
+<br />
+
+## 📝 Study Documents
+- [UICollectionView 개요](https://yexjinitlog.tistory.com/95?category=1012361)
+- [UITabbarController 개요](https://yexjinitlog.tistory.com/100?category=1012361)
+- [UICollectionView와 UIScrollView 사이의 관계](https://yexjinitlog.tistory.com/106?category=1012361)
+- [Diffable DataSource, SnapShot, Compositional Layout](https://yexjinitlog.tistory.com/108?category=1012361)
+- [Navigation과 Modal](https://yexjinitlog.tistory.com/114?category=1012361)
+- [Combine(1): Overview](https://yexjinitlog.tistory.com/117?category=1012361)
+- [Combine(2): Publisher, Subscriber, Operator](https://yexjinitlog.tistory.com/118?category=1012361)
