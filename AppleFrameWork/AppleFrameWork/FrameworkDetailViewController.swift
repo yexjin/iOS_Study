@@ -7,38 +7,48 @@
 
 import UIKit
 import SafariServices   // 사파리를 띄우기 위한 Framework.
+import Combine
 
 class FrameworkDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var framework: AppleFramework = AppleFramework(name: "Unknown", imageName: "", urlString: "", description: "")
+    @Published var framework: AppleFramework = AppleFramework(name: "Unknown", imageName: "", urlString: "", description: "")
+    
+    var subscriptions = Set<AnyCancellable>()
+    let buttonTapped = PassthroughSubject<AppleFramework, Never>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
         
+        bind()
     }
     
-    func updateUI() {
-        imageView.image = UIImage(named: framework.imageName)
-        titleLabel.text = framework.name
-        descriptionLabel.text = framework.description
+    private func bind() {
+        // input : Button 클릭
+        // 구현할 logic :  framework -> url -> safari -> present
+        buttonTapped
+            .receive(on: RunLoop.main)
+            .compactMap { URL(string: $0.urlString) }
+            .sink { [unowned self] url in
+                let safari = SFSafariViewController(url: url)
+                self.present(safari, animated: true)
+            }.store(in: &subscriptions)
+         
+        // output : Data setting될 떄, UI 업데이트
+        $framework
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] framework in
+                self.imageView.image = UIImage(named: framework.imageName)
+                self.titleLabel.text = framework.name
+                self.descriptionLabel.text = framework.description
+            }.store(in: &subscriptions)
     }
     
     // Learn More 버튼을 클릭했을 때, Action target
     @IBAction func learnMoreTapped(_ sender: Any) {
-    
-    // url 객체 만들기
-        guard let url = URL(string: framework.urlString) else {
-            return
-        }
-    
-    // Safari View Controller
-    let safari = SFSafariViewController(url: url)
-    present(safari, animated: true)
-        
+        buttonTapped.send(framework)
     }
 
 }

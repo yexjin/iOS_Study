@@ -6,14 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class FrameworkListViewController: UIViewController {
     
     // CollectionView 자체를 연결
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    // 데이터를 일단 가져오기
-    let list: [AppleFramework] = AppleFramework.list
     
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     
@@ -23,14 +21,50 @@ class FrameworkListViewController: UIViewController {
         case main
     }
     
+    
+    // Combine
+    var subscriptions = Set<AnyCancellable>()
+    let didSelect = PassthroughSubject<AppleFramework, Never>()
+    @Published var list: [AppleFramework] = AppleFramework.list
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self  // collectionView의 위임을 나에게 하겠다. 내가 담당하겠다!
         navigationController?.navigationBar.topItem?.title = "🎀 Apple Frameworks"
         
-    // Data, Presentation, Layout
-//      (1) presentation -> diffable datasource
+        configureCollectionView()
+        
+        bind()
+        
+    }
+    
+    private func bind() {
+        // input: 사용자 인풋을 받아서 처리해야할 것
+        // - item 선택되었을 때 처리
+        didSelect
+            .receive(on: RunLoop.main)  // UI 변경이니, main thread에서 일어날 수 있게 하기
+            .sink { [unowned self] framework in
+            let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController
+            vc.framework = framework
+            self.present(vc, animated: true)
+        }.store(in: &subscriptions)
+        
+        // output: data, state 변경에 따라서, UI 업데이트 할 것
+        // - items 세팅이 되었을 때, 컬랙션뷰를 업데이트
+        $list
+            .receive(on: RunLoop.main )
+            .sink { [unowned self] list in
+                self.applySectionItems(list)
+            }.store(in: &subscriptions)
+    }
+    
+    // Collection View Presentation, Layout 설정
+    private func configureCollectionView() {
+        
+        // presentation -> diffable datasource
         dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FrameworkCell", for: indexPath) as? FrameworkCell else {
                  return nil
@@ -39,15 +73,21 @@ class FrameworkListViewController: UIViewController {
             return cell
         })
         
-//      (2) data -> snapshot
+        // layout -> compositional layout
+        collectionView.collectionViewLayout = layout()
+        
+    }
+    
+    // Collection View Data 설정
+    private func applySectionItems(_ items: [Item], to section: Section = .main) {
+        
+        // data -> snapshot
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(list, toSection: .main)
+        snapshot.appendSections([section])
+        snapshot.appendItems(items, toSection: section)
         // dataSource에 Snapshot을 적용시키기
         dataSource.apply(snapshot)
         
-//      (3) layout -> compositional layout
-        collectionView.collectionViewLayout = layout()
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
@@ -76,12 +116,8 @@ extension FrameworkListViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let framework = list[indexPath.item] // 몇번째 item인지?
         
-        // FrameworkDetailViewController 띄우기
-        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "FrameworkDetailViewController") as! FrameworkDetailViewController  // FrameworkDetailViewController로 강제 캐스팅
-        vc.framework = framework    // FrameworkDetailView가 떴을 때, 이미 업데이트가 완료된 상태로 뜨게 됨.
-//        vc.modalPresentationStyle = .fullScreen // fullScreen으로 모달이 뜨게 -> 제스쳐로 모달을 닫을 수 없음
-        present(vc, animated: true) // present 메소드로 띄워주기
+        // 데이터 보내기!
+        didSelect.send(framework)
     }
 }
 
