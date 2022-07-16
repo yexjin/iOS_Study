@@ -20,6 +20,7 @@
 | June 29, 2022 | [Apple Framework List + MODAL](https://yexjinitlog.tistory.com/115) | Modal, Another Storyboard & UIViewController, SafariService |
 | June 30, 2022 | [Head Space Focus + NAVIGATION](https://yexjinitlog.tistory.com/116) | Navigation, UICollectionReusableView, Multiple sections in Compositional layout |
 | July 8, 2022 | [Apple Framework List + Combine](https://yexjinitlog.tistory.com/119) | Combine |
+| July 16, 2022 | [Github User Profile](https://yexjinitlog.tistory.com/122?category=1022295) | Network, Open source |
 
 <br />
 
