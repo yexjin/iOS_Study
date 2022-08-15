@@ -1,5 +1,5 @@
 # iOS_Study
-온라인 강의를 수강하며 진행한 여러 토이프로젝트들 모음집📱  
+온라인 강의를 수강하며 진행한 여러 토이프로젝트들 모음집📱 (온라인 강의를 무시하고 공부한 내용도 포함)  
 첫 iOS 공부 😳 !
 
 <br />
@@ -21,6 +21,7 @@
 | June 30, 2022 | [Head Space Focus + NAVIGATION](https://yexjinitlog.tistory.com/116) | Navigation, UICollectionReusableView, Multiple sections in Compositional layout |
 | July 8, 2022 | [Apple Framework List + Combine](https://yexjinitlog.tistory.com/119) | Combine |
 | July 16, 2022 | [Github User Profile](https://yexjinitlog.tistory.com/122?category=1022295) | Network, Open source |
+| August 15, 2022 - | Todo List | |
 
 <br />
 
