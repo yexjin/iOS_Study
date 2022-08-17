@@ -75,7 +75,7 @@ class TodoManager {
     
     // TODO: retrieve 로직 추가
     func retrieveTodo() {
-        todos = Storage.retreive("todos.json", from: .documents, as: [Todo].self) ?? []
+        todos = Storage.retreive("todo.json", from: .documents, as: [Todo].self) ?? []
         
         let lastId = todos.last?.id ?? 0
         

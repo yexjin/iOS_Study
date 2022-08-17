@@ -19,6 +19,7 @@ class TodoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
         // TODO: Todo 데이터 불러오기
         todoListViewModel.loadTasks()
@@ -67,9 +68,11 @@ extension TodoListViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // TODO: 섹션 몇개
+        print("sdfksldf")
         return todoListViewModel.numOfSection
     }
     
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // TODO: 섹션별 아이템 몇개
         if section == 0{
@@ -131,6 +134,7 @@ class TodoListHeaderView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 }
 
