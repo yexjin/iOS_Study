@@ -102,17 +102,16 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
-                            <view contentMode="scaleToFill" id="965-Ai-IiK">
-                                <rect key="frame" x="0.0" y="757" width="414" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="965-Ai-IiK">
+                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i want to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-1f-T59">
-                                        <rect key="frame" x="15" y="33" width="283" height="34"/>
+                                        <rect key="frame" x="15" y="13" width="283" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rc6-TB-sJZ">
-                                        <rect key="frame" x="308" y="32.5" width="45" height="35"/>
+                                        <rect key="frame" x="308" y="12.5" width="45" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="cV0-dr-cKM"/>
                                             <constraint firstAttribute="height" constant="35" id="gs2-TN-jaZ"/>
@@ -126,7 +125,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9v-Cj-fwx">
-                                        <rect key="frame" x="363" y="32.5" width="35" height="35"/>
+                                        <rect key="frame" x="363" y="12.5" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="cbo-Ph-qQO"/>
                                             <constraint firstAttribute="width" constant="35" id="t3D-02-yMS"/>
@@ -143,8 +142,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                                 <constraints>
-                                    <constraint firstItem="Rc6-TB-sJZ" firstAttribute="centerY" secondItem="965-Ai-IiK" secondAttribute="centerY" id="218-Ot-fER"/>
+                                    <constraint firstAttribute="height" constant="60" id="5ND-m3-gbB"/>
                                     <constraint firstItem="TCe-1f-T59" firstAttribute="centerY" secondItem="965-Ai-IiK" secondAttribute="centerY" id="7tb-DC-ny3"/>
+                                    <constraint firstItem="Rc6-TB-sJZ" firstAttribute="centerY" secondItem="d9v-Cj-fwx" secondAttribute="centerY" id="ccs-by-WcN"/>
                                     <constraint firstAttribute="trailing" secondItem="d9v-Cj-fwx" secondAttribute="trailing" constant="16" id="fuM-MW-mOg"/>
                                     <constraint firstItem="d9v-Cj-fwx" firstAttribute="centerY" secondItem="965-Ai-IiK" secondAttribute="centerY" id="hkU-Lj-h51"/>
                                     <constraint firstItem="TCe-1f-T59" firstAttribute="leading" secondItem="965-Ai-IiK" secondAttribute="leading" constant="15" id="kF5-Fe-KCn"/>
@@ -155,6 +155,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="965-Ai-IiK" secondAttribute="trailing" id="4vY-2c-HWy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="965-Ai-IiK" secondAttribute="bottom" id="UsA-NE-hXN"/>
+                            <constraint firstItem="965-Ai-IiK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s1h-Ow-1sk"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="checkmark.circle.fill" catalog="system" id="1dl-bu-sE8"/>
                     <connections>
