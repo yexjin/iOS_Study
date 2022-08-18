@@ -68,7 +68,6 @@ extension TodoListViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // TODO: 섹션 몇개
-        print("sdfksldf")
         return todoListViewModel.numOfSection
     }
     
@@ -99,6 +98,7 @@ extension TodoListViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
     //헤더뷰
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
