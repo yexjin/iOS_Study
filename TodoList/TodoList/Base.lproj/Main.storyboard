@@ -34,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaQ-c8-FH4">
+                                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaQ-c8-FH4">
                                                     <rect key="frame" x="20" y="27.5" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="DOT-7t-U9F"/>
@@ -45,6 +45,10 @@
                                                     <state key="normal" title="Button" image="circle" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                                     </state>
+                                                    <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="checkButtonTapped:" destination="kCm-Sz-XQq" eventType="touchUpInside" id="iOc-Sr-XWj"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👻 Weekly iOS Meeting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayh-eR-Olv">
                                                     <rect key="frame" x="71" y="34.5" width="278" height="21"/>
@@ -61,9 +65,22 @@
                                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="xmark.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="deleteButtonTapped:" destination="kCm-Sz-XQq" eventType="touchUpInside" id="A42-V8-Kxq"/>
+                                                    </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cg0-Lh-7gf">
+                                                    <rect key="frame" x="65" y="44.5" width="250" height="1"/>
+                                                    <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="0ny-k4-DIF"/>
+                                                        <constraint firstAttribute="width" constant="250" id="Q1b-fA-lWy"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="cg0-Lh-7gf" firstAttribute="leading" secondItem="oaQ-c8-FH4" secondAttribute="trailing" constant="10" id="ANj-Di-Vpa"/>
+                                                <constraint firstItem="cg0-Lh-7gf" firstAttribute="centerY" secondItem="qFb-OY-NdO" secondAttribute="centerY" id="a4H-BF-rtf"/>
                                                 <constraint firstItem="ayh-eR-Olv" firstAttribute="centerY" secondItem="qFb-OY-NdO" secondAttribute="centerY" id="bVz-j9-sZf"/>
                                                 <constraint firstItem="ayh-eR-Olv" firstAttribute="leading" secondItem="oaQ-c8-FH4" secondAttribute="trailing" constant="16" id="bph-NF-6h2"/>
                                                 <constraint firstAttribute="trailing" secondItem="itm-nf-HXf" secondAttribute="trailing" constant="20" id="eaK-7h-yIG"/>
@@ -78,6 +95,8 @@
                                             <outlet property="checkButton" destination="oaQ-c8-FH4" id="xeK-8M-D6s"/>
                                             <outlet property="deleteButton" destination="itm-nf-HXf" id="6ac-T1-3vI"/>
                                             <outlet property="descriptionLabel" destination="ayh-eR-Olv" id="AKC-pY-SNy"/>
+                                            <outlet property="strikeThroughView" destination="cg0-Lh-7gf" id="Vef-SC-ynA"/>
+                                            <outlet property="strikeThroughWidth" destination="Q1b-fA-lWy" id="gKs-0n-TdS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

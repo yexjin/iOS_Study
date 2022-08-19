@@ -96,6 +96,19 @@ extension TodoListViewController: UICollectionViewDataSource {
         
         cell.updateUI(todo: todo)
         
+        
+        cell.doneButtonTapHandler = { isDone in
+            todo.isDone = isDone
+            self.todoListViewModel.updateTodo(todo)
+            self.collectionView.reloadData()
+        }
+        cell.deleteButtonTapHandler = {
+            self.todoListViewModel.deleteTodo(todo)
+            self.collectionView.reloadData()
+        }
+        
+        
+        
         return cell
     }
     
@@ -143,6 +156,12 @@ class TodoListCell: UICollectionViewCell {
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var strikeThroughView: UIView!
+    @IBOutlet weak var strikeThroughWidth: NSLayoutConstraint!
+    
+    var doneButtonTapHandler: ((Bool) -> Void)?
+    var deleteButtonTapHandler: (() -> Void)?
+    
     
     func updateUI(todo: Todo) {
         // TODO: Todo Cell 업데이트
@@ -150,6 +169,7 @@ class TodoListCell: UICollectionViewCell {
         descriptionLabel.text = todo.detail
         descriptionLabel.alpha = todo.isDone ? 0.2 : 1
         deleteButton.isHidden = todo.isDone == false
+        showStrikeThrough(todo.isDone)
     }
     
     override func awakeFromNib() {
@@ -162,9 +182,33 @@ class TodoListCell: UICollectionViewCell {
         reset()
     }
     
+    private func showStrikeThrough(_ show: Bool) {
+        if show {
+            strikeThroughWidth.constant = descriptionLabel.bounds.width
+        } else {
+            strikeThroughWidth.constant = 0
+        }
+    }
+    
+    @IBAction func checkButtonTapped(_ sender: Any) {
+        // TODO: CheckButton 처리
+        checkButton.isSelected = !checkButton.isSelected
+        let isDone = checkButton.isSelected
+        showStrikeThrough(isDone)
+        descriptionLabel.alpha = isDone ? 0.2 : 1
+        deleteButton.isHidden = !isDone
+        doneButtonTapHandler?(isDone)
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        // TODO: deleteButton 처리
+        deleteButtonTapHandler?()
+    }
+    
     func reset() {
         // TODO: reset로직 구현
         descriptionLabel.alpha = 1
         deleteButton.isHidden = true
+        showStrikeThrough(false)
     }
 }
