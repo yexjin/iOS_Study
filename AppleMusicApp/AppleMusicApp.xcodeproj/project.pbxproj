@@ -29,9 +29,11 @@
 		0352D93528C7219100AFFF12 /* Sampled in your own sweet way.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D91F28C7219100AFFF12 /* Sampled in your own sweet way.mp3 */; };
 		0352D93628C7219100AFFF12 /* always you.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D92028C7219100AFFF12 /* always you.mp3 */; };
 		0352D93728C7219100AFFF12 /* Bike Rides On The Block.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D92128C7219100AFFF12 /* Bike Rides On The Block.mp3 */; };
+		0352D93A28C72BC300AFFF12 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352D93928C72BC300AFFF12 /* HomeViewController.swift */; };
+		0352D93C28C72F6F00AFFF12 /* TrackCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352D93B28C72F6F00AFFF12 /* TrackCollectionHeaderView.swift */; };
+		0352D93E28C73D3500AFFF12 /* TrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352D93D28C73D3500AFFF12 /* TrackCollectionViewCell.swift */; };
 		036C6AE028C5DE4200A66C69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C6ADF28C5DE4200A66C69 /* AppDelegate.swift */; };
 		036C6AE228C5DE4200A66C69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C6AE128C5DE4200A66C69 /* SceneDelegate.swift */; };
-		036C6AE428C5DE4200A66C69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C6AE328C5DE4200A66C69 /* ViewController.swift */; };
 		036C6AE728C5DE4200A66C69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036C6AE528C5DE4200A66C69 /* Main.storyboard */; };
 		036C6AE928C5DE4300A66C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036C6AE828C5DE4300A66C69 /* Assets.xcassets */; };
 		036C6AEC28C5DE4300A66C69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036C6AEA28C5DE4300A66C69 /* LaunchScreen.storyboard */; };
@@ -60,10 +62,12 @@
 		0352D91F28C7219100AFFF12 /* Sampled in your own sweet way.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sampled in your own sweet way.mp3"; sourceTree = "<group>"; };
 		0352D92028C7219100AFFF12 /* always you.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "always you.mp3"; sourceTree = "<group>"; };
 		0352D92128C7219100AFFF12 /* Bike Rides On The Block.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bike Rides On The Block.mp3"; sourceTree = "<group>"; };
+		0352D93928C72BC300AFFF12 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0352D93B28C72F6F00AFFF12 /* TrackCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionHeaderView.swift; sourceTree = "<group>"; };
+		0352D93D28C73D3500AFFF12 /* TrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		036C6ADC28C5DE4200A66C69 /* AppleMusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleMusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036C6ADF28C5DE4200A66C69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		036C6AE128C5DE4200A66C69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		036C6AE328C5DE4200A66C69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		036C6AE628C5DE4200A66C69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		036C6AE828C5DE4300A66C69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		036C6AEB28C5DE4300A66C69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,6 +114,17 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		0352D93828C72B8900AFFF12 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				036C6AE528C5DE4200A66C69 /* Main.storyboard */,
+				0352D93928C72BC300AFFF12 /* HomeViewController.swift */,
+				0352D93B28C72F6F00AFFF12 /* TrackCollectionHeaderView.swift */,
+				0352D93D28C73D3500AFFF12 /* TrackCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		036C6AD328C5DE4200A66C69 = {
 			isa = PBXGroup;
 			children = (
@@ -129,14 +144,13 @@
 		036C6ADE28C5DE4200A66C69 /* AppleMusicApp */ = {
 			isa = PBXGroup;
 			children = (
-				0352D90B28C7214F00AFFF12 /* Resources */,
+				0352D93828C72B8900AFFF12 /* Home */,
 				036C6ADF28C5DE4200A66C69 /* AppDelegate.swift */,
 				036C6AE128C5DE4200A66C69 /* SceneDelegate.swift */,
-				036C6AE328C5DE4200A66C69 /* ViewController.swift */,
-				036C6AE528C5DE4200A66C69 /* Main.storyboard */,
 				036C6AE828C5DE4300A66C69 /* Assets.xcassets */,
 				036C6AEA28C5DE4300A66C69 /* LaunchScreen.storyboard */,
 				036C6AED28C5DE4300A66C69 /* Info.plist */,
+				0352D90B28C7214F00AFFF12 /* Resources */,
 			);
 			path = AppleMusicApp;
 			sourceTree = "<group>";
@@ -234,9 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				036C6AE428C5DE4200A66C69 /* ViewController.swift in Sources */,
 				036C6AE028C5DE4200A66C69 /* AppDelegate.swift in Sources */,
 				036C6AE228C5DE4200A66C69 /* SceneDelegate.swift in Sources */,
+				0352D93A28C72BC300AFFF12 /* HomeViewController.swift in Sources */,
+				0352D93E28C73D3500AFFF12 /* TrackCollectionViewCell.swift in Sources */,
+				0352D93C28C72F6F00AFFF12 /* TrackCollectionHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
