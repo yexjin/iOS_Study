@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0300B70B28CF28660045F66D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B70A28CF28660045F66D /* Track.swift */; };
+		0300B70D28CF2A590045F66D /* TrackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B70C28CF2A590045F66D /* TrackManager.swift */; };
+		0300B70F28CF2DF80045F66D /* Extension+AVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B70E28CF2DF80045F66D /* Extension+AVPlayerItem.swift */; };
 		0352D92228C7219100AFFF12 /* Getsomerest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90C28C7219000AFFF12 /* Getsomerest.mp3 */; };
 		0352D92328C7219100AFFF12 /* i fell in love with you one night in september..mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90D28C7219000AFFF12 /* i fell in love with you one night in september..mp3 */; };
 		0352D92428C7219100AFFF12 /* [ asleep ].mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90E28C7219000AFFF12 /* [ asleep ].mp3 */; };
@@ -40,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0300B70A28CF28660045F66D /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		0300B70C28CF2A590045F66D /* TrackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackManager.swift; sourceTree = "<group>"; };
+		0300B70E28CF2DF80045F66D /* Extension+AVPlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+AVPlayerItem.swift"; sourceTree = "<group>"; };
 		0352D90C28C7219000AFFF12 /* Getsomerest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Getsomerest.mp3; sourceTree = "<group>"; };
 		0352D90D28C7219000AFFF12 /* i fell in love with you one night in september..mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "i fell in love with you one night in september..mp3"; sourceTree = "<group>"; };
 		0352D90E28C7219000AFFF12 /* [ asleep ].mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[ asleep ].mp3"; sourceTree = "<group>"; };
@@ -85,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0300B70928CF28230045F66D /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				0300B70A28CF28660045F66D /* Track.swift */,
+				0300B70C28CF2A590045F66D /* TrackManager.swift */,
+				0300B70E28CF2DF80045F66D /* Extension+AVPlayerItem.swift */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
 		0352D90B28C7214F00AFFF12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +160,7 @@
 		036C6ADE28C5DE4200A66C69 /* AppleMusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				0300B70928CF28230045F66D /* Track */,
 				0352D93828C72B8900AFFF12 /* Home */,
 				036C6ADF28C5DE4200A66C69 /* AppDelegate.swift */,
 				036C6AE128C5DE4200A66C69 /* SceneDelegate.swift */,
@@ -250,9 +267,12 @@
 			files = (
 				036C6AE028C5DE4200A66C69 /* AppDelegate.swift in Sources */,
 				036C6AE228C5DE4200A66C69 /* SceneDelegate.swift in Sources */,
+				0300B70F28CF2DF80045F66D /* Extension+AVPlayerItem.swift in Sources */,
+				0300B70D28CF2A590045F66D /* TrackManager.swift in Sources */,
 				0352D93A28C72BC300AFFF12 /* HomeViewController.swift in Sources */,
 				0352D93E28C73D3500AFFF12 /* TrackCollectionViewCell.swift in Sources */,
 				0352D93C28C72F6F00AFFF12 /* TrackCollectionHeaderView.swift in Sources */,
+				0300B70B28CF28660045F66D /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
