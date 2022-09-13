@@ -10,6 +10,8 @@
 		0300B70B28CF28660045F66D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B70A28CF28660045F66D /* Track.swift */; };
 		0300B70D28CF2A590045F66D /* TrackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B70C28CF2A590045F66D /* TrackManager.swift */; };
 		0300B70F28CF2DF80045F66D /* Extension+AVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B70E28CF2DF80045F66D /* Extension+AVPlayerItem.swift */; };
+		03423C3C28D06F4E0083721B /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03423C3B28D06F4E0083721B /* Player.storyboard */; };
+		03423C3E28D072200083721B /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03423C3D28D072200083721B /* PlayerViewController.swift */; };
 		0352D92228C7219100AFFF12 /* Getsomerest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90C28C7219000AFFF12 /* Getsomerest.mp3 */; };
 		0352D92328C7219100AFFF12 /* i fell in love with you one night in september..mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90D28C7219000AFFF12 /* i fell in love with you one night in september..mp3 */; };
 		0352D92428C7219100AFFF12 /* [ asleep ].mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90E28C7219000AFFF12 /* [ asleep ].mp3 */; };
@@ -46,6 +48,8 @@
 		0300B70A28CF28660045F66D /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		0300B70C28CF2A590045F66D /* TrackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackManager.swift; sourceTree = "<group>"; };
 		0300B70E28CF2DF80045F66D /* Extension+AVPlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+AVPlayerItem.swift"; sourceTree = "<group>"; };
+		03423C3B28D06F4E0083721B /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
+		03423C3D28D072200083721B /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		0352D90C28C7219000AFFF12 /* Getsomerest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Getsomerest.mp3; sourceTree = "<group>"; };
 		0352D90D28C7219000AFFF12 /* i fell in love with you one night in september..mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "i fell in love with you one night in september..mp3"; sourceTree = "<group>"; };
 		0352D90E28C7219000AFFF12 /* [ asleep ].mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[ asleep ].mp3"; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 				0300B70E28CF2DF80045F66D /* Extension+AVPlayerItem.swift */,
 			);
 			path = Track;
+			sourceTree = "<group>";
+		};
+		03423C3A28D06F160083721B /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				03423C3B28D06F4E0083721B /* Player.storyboard */,
+				03423C3D28D072200083721B /* PlayerViewController.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		0352D90B28C7214F00AFFF12 /* Resources */ = {
@@ -160,6 +173,7 @@
 		036C6ADE28C5DE4200A66C69 /* AppleMusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				03423C3A28D06F160083721B /* Player */,
 				0300B70928CF28230045F66D /* Track */,
 				0352D93828C72B8900AFFF12 /* Home */,
 				036C6ADF28C5DE4200A66C69 /* AppDelegate.swift */,
@@ -235,6 +249,7 @@
 				036C6AEC28C5DE4300A66C69 /* LaunchScreen.storyboard in Resources */,
 				0352D93028C7219100AFFF12 /* Chamomile Tea.mp3 in Resources */,
 				0352D92F28C7219100AFFF12 /* Glow.mp3 in Resources */,
+				03423C3C28D06F4E0083721B /* Player.storyboard in Resources */,
 				036C6AE928C5DE4300A66C69 /* Assets.xcassets in Resources */,
 				0352D92528C7219100AFFF12 /* distant moon (spotify apple etc).mp3 in Resources */,
 				0352D92628C7219100AFFF12 /* Sleepless.mp3 in Resources */,
@@ -270,6 +285,7 @@
 				0300B70F28CF2DF80045F66D /* Extension+AVPlayerItem.swift in Sources */,
 				0300B70D28CF2A590045F66D /* TrackManager.swift in Sources */,
 				0352D93A28C72BC300AFFF12 /* HomeViewController.swift in Sources */,
+				03423C3E28D072200083721B /* PlayerViewController.swift in Sources */,
 				0352D93E28C73D3500AFFF12 /* TrackCollectionViewCell.swift in Sources */,
 				0352D93C28C72F6F00AFFF12 /* TrackCollectionHeaderView.swift in Sources */,
 				0300B70B28CF28660045F66D /* Track.swift in Sources */,

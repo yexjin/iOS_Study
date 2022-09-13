@@ -54,10 +54,10 @@ extension HomeViewController: UICollectionViewDataSource {
             }
             
             header.update(with: item)
-            header.tapHandler = {item -> Void in
-                // 아직 플레이어 화면 구현을 안했기 때문에 출력만 진행
-                print("--> play \(item.convertToTrack()?.title)")
-            }
+        header.tapHandler = {item -> Void in
+            // 아직 플레이어 화면 구현을 안했기 때문에 출력만 진행
+            print("--> play \(item.convertToTrack()?.title)")
+        }
             return header
             
         default:
