@@ -5,7 +5,7 @@
 //  Created by 오예진 on 2022/09/12.
 //
 
-import Foundation
+import UIKit
 
 struct Track {
     let title: String
@@ -26,7 +26,7 @@ struct Album {
     let tracks: [Track]
     
     var thumbnail: UIImage? {
-        return ltracks.first?.artwork
+        return tracks.first?.artwork
     }
     
     var artist: String? {

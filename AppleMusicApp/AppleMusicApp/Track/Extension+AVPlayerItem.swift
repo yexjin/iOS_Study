@@ -5,7 +5,7 @@
 //  Created by 오예진 on 2022/09/12.
 //
 
-import Foundation
+import UIKit
 import AVFoundation
 
 extension AVPlayerItem {

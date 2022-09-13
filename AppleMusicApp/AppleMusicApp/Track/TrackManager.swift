@@ -5,7 +5,7 @@
 //  Created by 오예진 on 2022/09/12.
 //
 
-import Foundation
+import UIKit
 import AVFoundation
 //  AVFoundation : Apple플랫폼에서 시청각(audiovisual) 미디어를 캡쳐, 처리, 합성, 가져오기(import), 내보내기(export)를 하는 다양한 작업을 포함한 4개의 주요 기술 영역을 결합한 프레임워크
 

@@ -8,6 +8,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    // TODO: 트랙관리 객체
+    let trackManager: TrackManager = TrackManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +23,18 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        
+        // 사용할 셀의 개수 = 트랙개수
+        return trackManager.tracks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrackCollectionViewCell", for: indexPath) as? TrackCollectionViewCell else { return UICollectionViewCell()}
+        
+        // cell의 UI 업데이트 과정이 필요 -> TrackCollectionViewCell.swift에 구현
+        let track = trackManager.track(at: indexPath.item)
+        cell.updateUI(item: track)
         
         return cell
     }
