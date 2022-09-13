@@ -12,6 +12,7 @@
 		0300B70F28CF2DF80045F66D /* Extension+AVPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0300B70E28CF2DF80045F66D /* Extension+AVPlayerItem.swift */; };
 		03423C3C28D06F4E0083721B /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03423C3B28D06F4E0083721B /* Player.storyboard */; };
 		03423C3E28D072200083721B /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03423C3D28D072200083721B /* PlayerViewController.swift */; };
+		03423C4028D07FFB0083721B /* SimplePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03423C3F28D07FFB0083721B /* SimplePlayer.swift */; };
 		0352D92228C7219100AFFF12 /* Getsomerest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90C28C7219000AFFF12 /* Getsomerest.mp3 */; };
 		0352D92328C7219100AFFF12 /* i fell in love with you one night in september..mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90D28C7219000AFFF12 /* i fell in love with you one night in september..mp3 */; };
 		0352D92428C7219100AFFF12 /* [ asleep ].mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0352D90E28C7219000AFFF12 /* [ asleep ].mp3 */; };
@@ -50,6 +51,7 @@
 		0300B70E28CF2DF80045F66D /* Extension+AVPlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+AVPlayerItem.swift"; sourceTree = "<group>"; };
 		03423C3B28D06F4E0083721B /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
 		03423C3D28D072200083721B /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		03423C3F28D07FFB0083721B /* SimplePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePlayer.swift; sourceTree = "<group>"; };
 		0352D90C28C7219000AFFF12 /* Getsomerest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Getsomerest.mp3; sourceTree = "<group>"; };
 		0352D90D28C7219000AFFF12 /* i fell in love with you one night in september..mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "i fell in love with you one night in september..mp3"; sourceTree = "<group>"; };
 		0352D90E28C7219000AFFF12 /* [ asleep ].mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "[ asleep ].mp3"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				03423C3B28D06F4E0083721B /* Player.storyboard */,
 				03423C3D28D072200083721B /* PlayerViewController.swift */,
+				03423C3F28D07FFB0083721B /* SimplePlayer.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				036C6AE228C5DE4200A66C69 /* SceneDelegate.swift in Sources */,
 				0300B70F28CF2DF80045F66D /* Extension+AVPlayerItem.swift in Sources */,
 				0300B70D28CF2A590045F66D /* TrackManager.swift in Sources */,
+				03423C4028D07FFB0083721B /* SimplePlayer.swift in Sources */,
 				0352D93A28C72BC300AFFF12 /* HomeViewController.swift in Sources */,
 				03423C3E28D072200083721B /* PlayerViewController.swift in Sources */,
 				0352D93E28C73D3500AFFF12 /* TrackCollectionViewCell.swift in Sources */,
