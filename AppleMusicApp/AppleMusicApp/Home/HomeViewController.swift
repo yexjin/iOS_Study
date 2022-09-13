@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import simd
 
 class HomeViewController: UIViewController {
     
@@ -45,8 +46,17 @@ extension HomeViewController: UICollectionViewDataSource {
         // kind: supplementary view 종류 (header or footer)
         switch kind {
         case UICollectionView.elementKindSectionHeader:
+            guard let item = trackManager.todayMusic else {
+                return UICollectionReusableView()
+            }
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TrackCollectionHeaderView", for: indexPath)as? TrackCollectionHeaderView else {
                 return UICollectionReusableView()
+            }
+            
+            header.update(with: item)
+            header.tapHandler = {item -> Void in
+                // 아직 플레이어 화면 구현을 안했기 때문에 출력만 진행
+                print("--> play \(item.convertToTrack()?.title)")
             }
             return header
             
