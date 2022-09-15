@@ -79,3 +79,23 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+
+extension HomeViewController: UICollectionViewDelegate {
+    // 클릭했을때 어떻게 할까?
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // TODO: 곡 클릭시, 플레이어 뷰 띄우기
+        
+        //Player 스토리 보드를 저장 --> 그 스토리 보드 안에 여러가지 뷰컨트롤러 가 있는데 그 안에 특정 뷰컨트롤러를 가져오기 (storyboard id를 통해)
+        let playerStoryboard = UIStoryboard.init(name: "Player", bundle: nil)
+        
+        guard let playerVC = playerStoryboard.instantiateViewController(withIdentifier: "PlayerViewController") as? PlayerViewController else { return }
+        // instantiateViewController : 지정된 식별자(withIdentifier:)를 가지고 스토리보드의 데이터를 초기화 해 뷰 컨트롤러(=새로운 instance)를 만든다
+        
+        present(playerVC, animated: true, completion: nil)
+        // present
+        // - 뷰 위에 새로운 뷰가 얹어짐
+        // - 세로방향 전개
+        // - completion : 뷰 이동후 실행될 블록
+        
+    }
+}
