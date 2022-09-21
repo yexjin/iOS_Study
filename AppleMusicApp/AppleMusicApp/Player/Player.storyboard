@@ -43,6 +43,11 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oi7-t0-jfX">
                                 <rect key="frame" x="18" y="690" width="378" height="31"/>
+                                <connections>
+                                    <action selector="beginDrag:" destination="Y6W-OH-hqX" eventType="editingDidBegin" id="0mk-8v-bE2"/>
+                                    <action selector="endDrag:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="dgb-OU-Kqf"/>
+                                    <action selector="seek:" destination="Y6W-OH-hqX" eventType="valueChanged" id="3LA-eg-Tzm"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsM-dW-rud">
                                 <rect key="frame" x="179.5" y="765" width="55" height="55"/>
@@ -54,6 +59,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="40"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="togglePlayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="w1t-dd-TaV"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지아코" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPB-Ky-nFF">
                                 <rect key="frame" x="185" y="561.5" width="44.5" height="21"/>
@@ -88,7 +96,7 @@
                         <outlet property="playControlButton" destination="zsM-dW-rud" id="36C-hD-tlb"/>
                         <outlet property="thumbnailImageView" destination="cIJ-TA-HsT" id="N5a-KU-Oqd"/>
                         <outlet property="timeSlider" destination="oi7-t0-jfX" id="rGw-Xg-AF8"/>
-                        <outlet property="titleLabel" destination="oPB-Ky-nFF" id="0B2-Gj-aCW"/>
+                        <outlet property="titleLabel" destination="J9N-MV-jYH" id="b1W-O5-Ksg"/>
                         <outlet property="totalDurationLabel" destination="Kkx-1U-CH9" id="Cgj-Uz-N6B"/>
                     </connections>
                 </viewController>
