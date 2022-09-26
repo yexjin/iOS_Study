@@ -22,7 +22,7 @@ class PlayerViewController:
     //TODO: SimplePlayer 만들고 프로퍼티 추가
     let simplePlayer = SimplePlayer.shared
     
-    var timeObserver: Any?
+    var timeObserver: Any?  // 현재 재생되는 item의 시간을 일정하게 관찰하는 프로퍼티
     var isSeeking: Bool = false
     
     // 로드 시 호출
@@ -32,6 +32,11 @@ class PlayerViewController:
         updateTime(time: CMTime.zero)
         
         // TODO: Time Observer 구현
+        // - addPeriodicTimeObserver : 일정간격으로 시간을 관찰하는 함수
+        // - addPeriodicTimeObserver 함수를 timeObserver에 추가
+        timeObserver = simplePlayer.addPeriodicTimeObserver(forInterval:CMTime(seconds: 1, preferredTimescale: 10),queue:DispatchQueue.main, using:{time in
+            self.updateTime(time: time)
+        })
     }
     
     // 보이기 전에 호출
@@ -47,14 +52,19 @@ class PlayerViewController:
     }
 
 
-    @IBAction func beginDrag(_ sender: Any) {
+    @IBAction func beginDrag(_ sender: UISlider) {
         isSeeking = true
     }
-    @IBAction func endDrag(_ sender: Any) {
+    @IBAction func endDrag(_ sender: UISlider) {
         isSeeking = false
     }
-    @IBAction func seek(_ sender: Any) {
+    @IBAction func seek(_ sender: UISlider) {
         // TODO: seeking 구현
+        guard let currentItem = simplePlayer.currentItem else { return }
+        let position = Double(sender.value)
+        let seconds = position * currentItem.duration.seconds
+        let time = CMTime(seconds: seconds, preferredTimescale: 100)
+        simplePlayer.seek(to: time)
     }
     @IBAction func togglePlayButton(_ sender: Any) {
         // TODO : Playbutton toggle 구현
@@ -85,7 +95,14 @@ extension PlayerViewController {
     
     // currentTimeLabel과 durationTimeLabel의 text값 초기화
     func updateTime(time: CMTime) {
+        // TODO: 시간정보 업데이트, 심플 플레이어 이용하여 수정
+        currentTimeLabel.text = secondToString(sec: simplePlayer.currentTime)
+        totalDurationLabel.text = secondToString(sec: simplePlayer.totalDurationTime)
         
+        if isSeeking == false {
+            // TODO: 슬라이더 정보 업데이트
+            timeSlider.value = Float(simplePlayer.currentTime/simplePlayer.totalDurationTime)
+        }
     }
     
     // 다크모드 시, Tint 컬러 지정
