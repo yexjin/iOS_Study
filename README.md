@@ -21,7 +21,8 @@
 | June 30, 2022 | [Head Space Focus + NAVIGATION](https://yexjinitlog.tistory.com/116) | Navigation, UICollectionReusableView, Multiple sections in Compositional layout |
 | July 8, 2022 | [Apple Framework List + Combine](https://yexjinitlog.tistory.com/119) | Combine |
 | July 16, 2022 | [Github User Profile](https://yexjinitlog.tistory.com/122?category=1022295) | Network, Open source |
-| August 15, 2022 - August 19, 2022 | [Todo List](https://yexjinitlog.tistory.com/135) | Clone coding |
+| Aug 15, 2022 - Aug 19, 2022 | [Todo List](https://yexjinitlog.tistory.com/135) | Clone coding |
+| Sep 6, 2022 - Sep 27, 2022 | [Apple Music App](https://yexjinitlog.tistory.com/157) | Clone coding |
 
 <br />
 
