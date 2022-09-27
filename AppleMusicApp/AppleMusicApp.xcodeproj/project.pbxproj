@@ -43,6 +43,7 @@
 		036C6AE728C5DE4200A66C69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036C6AE528C5DE4200A66C69 /* Main.storyboard */; };
 		036C6AE928C5DE4300A66C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036C6AE828C5DE4300A66C69 /* Assets.xcassets */; };
 		036C6AEC28C5DE4300A66C69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036C6AEA28C5DE4300A66C69 /* LaunchScreen.storyboard */; };
+		0397FD5428E2B0C5009FB10B /* DefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0397FD5328E2B0C5009FB10B /* DefaultStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		036C6AE828C5DE4300A66C69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		036C6AEB28C5DE4300A66C69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		036C6AED28C5DE4300A66C69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0397FD5328E2B0C5009FB10B /* DefaultStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		036C6ADE28C5DE4200A66C69 /* AppleMusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				0397FD5228E2B0B0009FB10B /* Style */,
 				03423C3A28D06F160083721B /* Player */,
 				0300B70928CF28230045F66D /* Track */,
 				0352D93828C72B8900AFFF12 /* Home */,
@@ -187,6 +190,14 @@
 				0352D90B28C7214F00AFFF12 /* Resources */,
 			);
 			path = AppleMusicApp;
+			sourceTree = "<group>";
+		};
+		0397FD5228E2B0B0009FB10B /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				0397FD5328E2B0C5009FB10B /* DefaultStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 			files = (
 				036C6AE028C5DE4200A66C69 /* AppDelegate.swift in Sources */,
 				036C6AE228C5DE4200A66C69 /* SceneDelegate.swift in Sources */,
+				0397FD5428E2B0C5009FB10B /* DefaultStyle.swift in Sources */,
 				0300B70F28CF2DF80045F66D /* Extension+AVPlayerItem.swift in Sources */,
 				0300B70D28CF2A590045F66D /* TrackManager.swift in Sources */,
 				03423C4028D07FFB0083721B /* SimplePlayer.swift in Sources */,

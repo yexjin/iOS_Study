@@ -107,7 +107,8 @@ extension PlayerViewController {
     
     // 다크모드 시, Tint 컬러 지정
     func updateTintColor() {
-        
+        playControlButton.tintColor = DefaultStyle.Colors.tint
+        timeSlider.tintColor = DefaultStyle.Colors.tint
     }
     
     // 받아온 item을 가지고 업데이트 = simplePlayer 객체 업데이트
