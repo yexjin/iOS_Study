@@ -17,6 +17,8 @@
 		03DE97EC28409F4F0097CCD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03DE97EB28409F4F0097CCD6 /* Assets.xcassets */; };
 		03DE97EF28409F4F0097CCD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03DE97ED28409F4F0097CCD6 /* LaunchScreen.storyboard */; };
 		03DE97F728409FF80097CCD6 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DE97F628409FF80097CCD6 /* Framework.swift */; };
+		03E4C72228F04E7E00058B39 /* FrameworkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4C72128F04E7E00058B39 /* FrameworkListViewModel.swift */; };
+		03E4C72428F04E8A00058B39 /* FrameworkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4C72328F04E8A00058B39 /* FrameworkDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		03DE97EE28409F4F0097CCD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03DE97F028409F4F0097CCD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03DE97F628409FF80097CCD6 /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
+		03E4C72128F04E7E00058B39 /* FrameworkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkListViewModel.swift; sourceTree = "<group>"; };
+		03E4C72328F04E8A00058B39 /* FrameworkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +68,45 @@
 		03DE97E128409F4E0097CCD6 /* AppleFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				03E4C72728F0619900058B39 /* ViewModel */,
+				03E4C72628F04EA100058B39 /* View */,
+				03E4C72528F04E9800058B39 /* Model */,
 				03DE97E228409F4E0097CCD6 /* AppDelegate.swift */,
-				03DE97F628409FF80097CCD6 /* Framework.swift */,
 				03DE97E428409F4E0097CCD6 /* SceneDelegate.swift */,
-				03DE97E828409F4E0097CCD6 /* Main.storyboard */,
-				03278E40286C8DAE00170D9D /* Detail.storyboard */,
-				03278E42286C8E3100170D9D /* FrameworkDetailViewController.swift */,
-				0321937628411BBB00154408 /* FrameworkCell.swift */,
-				03219374284114B200154408 /* FrameworkListViewController.swift */,
 				03DE97EB28409F4F0097CCD6 /* Assets.xcassets */,
 				03DE97ED28409F4F0097CCD6 /* LaunchScreen.storyboard */,
 				03DE97F028409F4F0097CCD6 /* Info.plist */,
 			);
 			path = AppleFrameWork;
+			sourceTree = "<group>";
+		};
+		03E4C72528F04E9800058B39 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03DE97F628409FF80097CCD6 /* Framework.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03E4C72628F04EA100058B39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03219374284114B200154408 /* FrameworkListViewController.swift */,
+				03278E42286C8E3100170D9D /* FrameworkDetailViewController.swift */,
+				0321937628411BBB00154408 /* FrameworkCell.swift */,
+				03DE97E828409F4E0097CCD6 /* Main.storyboard */,
+				03278E40286C8DAE00170D9D /* Detail.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03E4C72728F0619900058B39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				03E4C72128F04E7E00058B39 /* FrameworkListViewModel.swift */,
+				03E4C72328F04E8A00058B39 /* FrameworkDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +183,11 @@
 			files = (
 				03DE97F728409FF80097CCD6 /* Framework.swift in Sources */,
 				03DE97E328409F4E0097CCD6 /* AppDelegate.swift in Sources */,
+				03E4C72228F04E7E00058B39 /* FrameworkListViewModel.swift in Sources */,
 				03DE97E528409F4E0097CCD6 /* SceneDelegate.swift in Sources */,
 				0321937728411BBB00154408 /* FrameworkCell.swift in Sources */,
 				03278E43286C8E3100170D9D /* FrameworkDetailViewController.swift in Sources */,
+				03E4C72428F04E8A00058B39 /* FrameworkDetailViewModel.swift in Sources */,
 				03219375284114B200154408 /* FrameworkListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

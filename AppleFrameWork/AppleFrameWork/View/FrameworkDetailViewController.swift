@@ -14,13 +14,12 @@ class FrameworkDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @Published var framework: AppleFramework = AppleFramework(name: "Unknown", imageName: "", urlString: "", description: "")
-    
     var subscriptions = Set<AnyCancellable>()
-    let buttonTapped = PassthroughSubject<AppleFramework, Never>()
+    var viewModel: FrameworkDetailViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
         bind()
     }
@@ -28,7 +27,7 @@ class FrameworkDetailViewController: UIViewController {
     private func bind() {
         // input : Button 클릭
         // 구현할 logic :  framework -> url -> safari -> present
-        buttonTapped
+        viewModel.buttonTapped
             .receive(on: RunLoop.main)
             .compactMap { URL(string: $0.urlString) }
             .sink { [unowned self] url in
@@ -37,7 +36,7 @@ class FrameworkDetailViewController: UIViewController {
             }.store(in: &subscriptions)
          
         // output : Data setting될 떄, UI 업데이트
-        $framework
+        viewModel.framework
             .receive(on: RunLoop.main)
             .sink { [unowned self] framework in
                 self.imageView.image = UIImage(named: framework.imageName)
@@ -48,7 +47,7 @@ class FrameworkDetailViewController: UIViewController {
     
     // Learn More 버튼을 클릭했을 때, Action target
     @IBAction func learnMoreTapped(_ sender: Any) {
-        buttonTapped.send(framework)
+        viewModel.learnMoreTapped( )
     }
 
 }
