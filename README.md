@@ -26,6 +26,12 @@
 
 <br />
 
+## 💡 Refactoring
+| Date  | Project | About |
+| --- | --- | --- |
+| Oct 7, 2022 | Apple Framework List | MVVM Pattern |
+<br />
+
 ## 📝 Study Documents
 - [UICollectionView 개요](https://yexjinitlog.tistory.com/95?category=1012361)
 - [UITabbarController 개요](https://yexjinitlog.tistory.com/100?category=1012361)
